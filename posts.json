@@ -1,0 +1,32 @@
+[
+  {
+    "title": "1 Blog Post",
+    "content": "This is the first post.",
+    "user_id": 1
+  },
+  {
+    "title": "2 Blog Post",
+    "content": "This is another post.",
+    "user_id": 2
+  },
+   {
+    "title": "3 Blog Post",
+    "content": "This is the first post.",
+    "user_id": 1
+  },
+  {
+    "title": "4 Blog Post",
+    "content": "This is another post.",
+    "user_id": 2
+  },
+   {
+    "title": "5 Blog Post",
+    "content": "This is the first post.",
+    "user_id": 1
+  },
+  {
+    "title": "6 Blog Post",
+    "content": "This is another post.",
+    "user_id": 2
+  }
+]

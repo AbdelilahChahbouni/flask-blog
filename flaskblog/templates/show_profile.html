@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+     <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{image_file}}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ user_profile.username }}</h2>
+          <p class="text-secondary">{{ user_profile.email }}</p>
+          <p class="text-secondary"> Posts : {{ user_profile.posts|length }}</p>
+          <p class="text-secondary"> Followers : {{ user_profile.followers.count() }}</p>
+          <p class="text-secondary"> Following : {{ user_profile.following.count() }}</p>
+        </div>
+         <div>
+            {% if user_profile == current_user %}
+              <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('users.account') }}">Update</a>
+            {% else %}
+                {% if current_user.is_authenticated and current_user.id != user_profile.id %}
+                    {% if current_user.is_following(user_profile) %}
+                        <form action="{{ url_for('users.unfollow', user_id=user_profile.id) }}" method="POST">
+                            <button class="btn btn-sm btn-danger">Unfollow</button>
+                        </form>
+                    {% else %}
+                        <form action="{{ url_for('users.follow', user_id=user_profile.id) }}" method="POST">
+                            <button class="btn btn-sm btn-primary">Follow</button>
+                        </form>
+                    {% endif %}
+               {% endif %}
+            {% endif %}
+          </div>
+
+      </div>    
+    </div>
+{% endblock content %}
