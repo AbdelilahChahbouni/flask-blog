@@ -25,11 +25,7 @@ jobs:
           timeout: 30s
           command_timeout: 10m
           script: |
-            echo "Pull latest code"
             cd /home/web_server/webites/flask-blog
-            git reset --hard   # optional: ensures clean state
-            git clean -fd      # optional: remove untracked files
-            git pull origin main
 
             echo "Stop current Docker containers"
             docker compose down
