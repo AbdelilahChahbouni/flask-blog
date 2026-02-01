@@ -1,0 +1,10 @@
+services:
+  flask_blog:
+    build: .
+    container_name: flask_blog
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    restart: always
+
